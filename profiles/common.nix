@@ -21,6 +21,7 @@
     busybox
     python3
     vim
+    neovim
     tailscale
   ];
   nixpkgs.config.allowUnfree = true;
