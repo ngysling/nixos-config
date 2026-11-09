@@ -65,8 +65,8 @@
   systemd.services."vpn-check" = {
     script = ''
       HC_UUID=$(cat ${config.sops.secrets.vpn_check_hc_uuid.path})
-      REAL_IP=$(/run/current-system/sw/bin/curl https://icanhazip.com)
-      VPN_IP=$(/run/current-system/sw/bin/docker exec vpn curl  https://canihazip.com)
+      REAL_IP=$(/run/current-system/sw/bin/curl https://ipinfo.io/ip)
+      VPN_IP=$(/run/current-system/sw/bin/docker exec vpn curl https://ipinfo.io/ip)
       if [ "$VPN_IP" != "$REAL_IP" ]; then
          /run/current-system/sw/bin/curl -s --retry 3 https://hc-ping.com/$HC_UUID/0
          exit 0
