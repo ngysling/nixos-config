@@ -21,17 +21,22 @@
     busybox
     python3
     vim
-    autorestic
-    restic
-    zfs
-    runitor
-    smartmontools
-    ffmpeg
-    iperf
     tailscale
   ];
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
+  };
+  programs.zsh = {
+    enable = true; 
+    shellAliases = { 
+      vim = "nvim";
+	 taildrop = "sudo tailscale file get .";
+	 # rebuild = "sudo nixos-rebuild switch --flake /home/nate/nix-home";
+	 fastfetch = "fastfetch --logo-color-1 \"#DBC93F\" --logo-color-2 \"#DBC93F\"";
+    };
+  }; 
+  programs.starship = { 
+    enable = true; 
   };
 }

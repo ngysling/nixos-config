@@ -84,6 +84,5 @@
 #  }; 
 #  # users.users.immich.extraGroups = [ "video" "render" ]; 
   system.stateVersion = "23.11";
-  programs.zsh.enable = true;
 }
 
