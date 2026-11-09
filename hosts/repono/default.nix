@@ -34,6 +34,9 @@
      services.zfs.autoSnapshot = { 
        enable = true;
     }; 
+  environment.systemPackages = [ 
+     pkgs.mergerfs
+  ]; 
   networking = {
     hostName = "repono";
     hostId = "9b5cbef2";

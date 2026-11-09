@@ -21,6 +21,7 @@
   fileSystems."/mnt/storage" =
     { device = "1:2:3";
       fsType = "fuse.mergerfs";
+      options = [ "allow_other" "default" ]; 
     };
 
   fileSystems."/mnt/disk3" =
